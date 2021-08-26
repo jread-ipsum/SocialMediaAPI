@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SocialMedia.Data;
+using SocialMedia.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +21,8 @@ namespace SocialMedia.Services
             var entity =
                 new Comment()
                 {
-                    Author = _userId,
-                    CommentText = model.CommentText,
-                    CreatedUtc = DateTimeOffset.Now
+                    AuthorId = _userId,
+                    Text = model.CommentText
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -37,18 +38,18 @@ namespace SocialMedia.Services
                 var query =
                     ctx
                         .Comments
-                        .Where(e => e.Author == _userId)
+                        .Where(e => e.AuthorId == _userId)
                         .Select(
                             e =>
                                 new CommentListItem
                                 {
                                     Id = e.Id,
-                                    CommentText = e.CommentText,
-                                    CreatedUtc = e.CreatedUtc
+                                    CommentText = e.Text
                                 }
-                        );  
+                        );
 
                 return query.ToArray();
             }
         }
+    }
 }
