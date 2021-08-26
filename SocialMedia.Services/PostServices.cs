@@ -30,7 +30,7 @@ namespace SocialMedia.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<PostList> GetPost()
+        public IEnumerable<PostList> GetAllPost()
         {
             using (var ctx = new ApplicationDbContext())
             {
