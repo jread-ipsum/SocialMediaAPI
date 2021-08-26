@@ -46,7 +46,7 @@ namespace SocialMedia.Services
                                     CommentText = e.CommentText,
                                     CreatedUtc = e.CreatedUtc
                                 }
-                        );
+                        );  
 
                 return query.ToArray();
             }
