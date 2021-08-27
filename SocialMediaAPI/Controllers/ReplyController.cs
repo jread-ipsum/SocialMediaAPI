@@ -13,10 +13,10 @@ namespace SocialMediaAPI.Controllers
     [Authorize]
     public class ReplyController : ApiController
     {
-        public IHttpActionResult Get(int commentId)
+        public IHttpActionResult Get(int Id)
         {
             ReplyService replyService = CreateReplyService();
-            var replies = replyService.GetRepliesByCommentId(commentId);
+            var replies = replyService.GetRepliesByCommentId(Id);
             return Ok(replies);
         }
 

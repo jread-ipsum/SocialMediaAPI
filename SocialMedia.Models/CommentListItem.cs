@@ -8,7 +8,7 @@ namespace SocialMedia.Models
 {
     public class CommentListItem
     {
-        public int Id { get; set; }
+        public int PostId { get; set; }
 
         public string CommentText { get; set; }
 

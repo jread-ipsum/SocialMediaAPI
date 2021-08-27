@@ -10,7 +10,7 @@ namespace SocialMedia.Models.ReplyModels
     public class ReplyListItem
     {
         [Required]
-        public int ReplyId { get; set; }
+        public int CommentId { get; set; }
         public string Text { get; set; }     
     }
 }
