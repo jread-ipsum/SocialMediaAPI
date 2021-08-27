@@ -57,14 +57,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommentCreate.cs" />
+    <Compile Include="CommentListItem.cs" />
+    <Compile Include="PostModels\PostCreate.cs" />
+    <Compile Include="PostModels\PostList.cs" />
     <Compile Include="LikeCreate.cs" />
     <Compile Include="LikeByPostID.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplyModels\ReplyCreate.cs" />
+    <Compile Include="ReplyModels\ReplyListItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
