@@ -1,16 +1,20 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using SocialMedia.Models;
+using SocialMedia.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Http;
 
 namespace SocialMediaAPI.Controllers
 {
-    public class CommentController
+    public class CommentController : ApiController
     {
         public IHttpActionResult Get()
         {
-            CommentService CommentService = CreateCommentService();
-            var comments = CommentService.GetComments();
+            CommentService commentService = CreateCommentService();
+            var comments = commentService.GetComments();
             return Ok(comments);
         }
 
