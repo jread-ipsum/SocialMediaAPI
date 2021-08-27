@@ -13,5 +13,6 @@ namespace SocialMedia.Models
         [MinLength(4, ErrorMessage = "Please enter at least 4 characters.")]
         [MaxLength(1000, ErrorMessage = "Comments have a maximum length of 1000 characters.")]
         public string CommentText { get; set; }
+        public int PostId { get; set; }
     }
 }

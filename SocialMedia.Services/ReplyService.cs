@@ -46,7 +46,7 @@ namespace SocialMedia.Services
                         e =>
                         new ReplyListItem
                         {
-                            ReplyId = e.Id,
+                            CommentId = e.CommentId,
                             Text = e.Text
                         });
 

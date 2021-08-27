@@ -11,21 +11,21 @@ namespace SocialMediaAPI.Controllers
 {
     public class CommentController : ApiController
     {
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(int id)
         {
             CommentService commentService = CreateCommentService();
-            var comments = commentService.GetComments();
+            var comments = commentService.GetComments(id);
             return Ok(comments);
         }
 
-        public IHttpActionResult Post(CommentCreate Comment)
+        public IHttpActionResult Post(CommentCreate comment)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
             var service = CreateCommentService();
 
-            if (!service.CreateComment(Comment))
+            if (!service.CreateComment(comment))
                 return InternalServerError();
 
             return Ok();

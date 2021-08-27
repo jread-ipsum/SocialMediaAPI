@@ -22,7 +22,8 @@ namespace SocialMedia.Services
                 new Comment()
                 {
                     AuthorId = _userId,
-                    Text = model.CommentText
+                    Text = model.CommentText,
+                    PostId = model.PostId
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -31,19 +32,19 @@ namespace SocialMedia.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<CommentListItem> GetComments()
+        public IEnumerable<CommentListItem> GetComments(int postId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var query =
                     ctx
                         .Comments
-                        .Where(e => e.AuthorId == _userId)
+                        .Where(e => e.PostId == postId)
                         .Select(
                             e =>
                                 new CommentListItem
                                 {
-                                    Id = e.Id,
+                                    PostId = e.PostId,
                                     CommentText = e.Text
                                 }
                         );
