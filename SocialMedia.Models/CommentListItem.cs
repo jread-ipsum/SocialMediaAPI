@@ -12,5 +12,7 @@ namespace SocialMedia.Models
 
         public string CommentText { get; set; }
 
+        //might want to include owner here
+
     }  
 }

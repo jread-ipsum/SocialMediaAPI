@@ -44,6 +44,8 @@ namespace SocialMedia.Services
                         {
                             Id = e.Id,
                             Title = e.Title,
+                            // Missing text? 
+                            Text = e.Text
                         }
                 );
 

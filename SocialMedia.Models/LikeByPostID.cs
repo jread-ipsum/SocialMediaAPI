@@ -11,5 +11,7 @@ namespace SocialMedia.Models
         public int Id { get; set; }
 
         public int PostId { get; set; }
+
+        //might want to include owner here as well
     }
 }

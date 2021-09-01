@@ -45,7 +45,7 @@ namespace SocialMedia.Services
                                 new CommentListItem
                                 {
                                     PostId = e.PostId,
-                                    CommentText = e.Text
+                                    CommentText = e.Text // might want to include ownerid here too
                                 }
                         );
 
