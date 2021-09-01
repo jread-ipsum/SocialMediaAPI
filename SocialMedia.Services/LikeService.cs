@@ -41,12 +41,12 @@ namespace SocialMedia.Services
                 var query =
                     ctx
                         .Likes
-                        .Where(e => e.OwnerId == _userId)
+                        .Where(e => e.OwnerId == _userId && e.PostId == postId) // also need to make sure we are grabbing the correct post
                         .Select(
                             e =>
                                 new LikeByPostID
                                 {
-                                    PostId = e.PostId
+                                    PostId = e.PostId // might also want to include owner Id and Id of like
                                 }
                         );
                 return query.ToArray();
